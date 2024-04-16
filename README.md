@@ -19,7 +19,7 @@ These instructions will get your copy of the project up and running on your loca
 1. **Clone the Repository**
 
     ```bash
-    git clone https://github.com/betakopa/bportal-auth-service
+    git clone https://github.com/solomonmarvel97/python-auth-service
     cd bportal-auth-service
     ```
 
