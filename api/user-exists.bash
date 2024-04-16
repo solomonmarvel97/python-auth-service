@@ -1,0 +1,1 @@
+curl -X GET "http://localhost:8080/check-user-exists?user_id=123e4567-e89b-12d3-a456-426614174000"

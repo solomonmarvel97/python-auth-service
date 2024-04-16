@@ -1,0 +1,128 @@
+openapi: 3.0.3
+info:
+  title: bportal-auth-service
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://127.0.0.1
+paths:
+  /signup:
+    post:
+      summary: signup
+      description: signup
+      operationId: signup
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: test@example.com
+                password:
+                  type: string
+                  example: testpassword
+                username:
+                  type: string
+                  example: testuser
+            examples:
+              signup:
+                value:
+                  email: test@example.com
+                  password: testpassword
+                  username: testuser
+      responses:
+        '200':
+          description: ''
+  /verify-account:
+    post:
+      summary: verify-account
+      description: verify-account
+      operationId: verifyAccount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                  example: <verification-code>
+                user_id:
+                  type: string
+                  example: <user-id>
+            examples:
+              verify-account:
+                value:
+                  code: <verification-code>
+                  user_id: <user-id>
+      responses:
+        '200':
+          description: ''
+  /login:
+    post:
+      summary: login
+      description: login
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: test@example.com
+                password:
+                  type: string
+                  example: testpassword
+            examples:
+              login:
+                value:
+                  email: test@example.com
+                  password: testpassword
+      responses:
+        '200':
+          description: ''
+  /refresh-token:
+    post:
+      summary: refresh-token
+      description: refresh-token
+      operationId: refreshToken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                refresh_token:
+                  type: string
+                  example: <refresh-token>
+            examples:
+              refresh-token:
+                value:
+                  refresh_token: <refresh-token>
+      responses:
+        '200':
+          description: ''
+  /check-user-exists:
+    get:
+      summary: check-user-exists
+      description: check-user-exists
+      operationId: checkUserExists
+      parameters:
+        - name: user_id
+          in: query
+          schema:
+            type: string
+            example: '12345'
+        - name: email
+          in: query
+          schema:
+            type: string
+            example: test@example.com
+      responses:
+        '200':
+          description: ''
+tags: []
